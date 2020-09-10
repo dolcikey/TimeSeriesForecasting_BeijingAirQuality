@@ -61,7 +61,7 @@ Now we will briefly discuss what our dataset contains.
 ![Beijing AQI](PNG/beijing_hazard_level.png)
 
 3. Average PM 2.5 Levels at Each of the Twelve Stations.
-![Average PM Levels per Station](PNG/nys_age_dist_percent.png)
+![Average PM Levels per Station](PNG/PM25_yearly_station.png)
 
 
 # Process
