@@ -15,15 +15,14 @@ This is small particulate matter that can be suspended
 in the air for long periods of time before it enters the lungs. First, we moved to combine all of the twelve sites
 into a single dataset –– visualizing each of the pollutants and weather phenomenons. 
 Then we tested for stationarity, causality between the features, and whether there was correlation between the features and time periods throughout our dataset.
-Next, we began to fit models in an effort to prepare our models to predict the last twenty percent of the data that we had set aside as a test case.
-
+Next, we began to fit models in an effort to prepare our models to predict the last twenty percent of the data that we had set aside as a test case.   
+We next decided to focus on a univariate time series forecast vs a multivariate time series forecast. The reason for the switch was that the hardware was unable to keep up with the amount of observations and features. So in order to 
 
 # Structure of Repository
 - PNG -- contains images created during EDA and those linked in README
 - Data_Cleaning.ipynb -- contains all processes that went into pipeline cleaning and statistical tests
 - Model_Evaluation.ipynb -- contains code that ran all of the models for NYS data
 - Alabama_Test.ipynb -- contains case where NYS model predicts onto Alabama data
-- Final_Columns.txt -- contains a working dictionary for the columns that ended up in the final dataframe
 - README.md
 
 
@@ -54,7 +53,6 @@ Before we dive deeper into the questions, here is some information on our data.
 ## Descriptive Statistics
 Now we will briefly discuss what our dataset contains. 
 1. PM 2.5: The target variable has ranges within which it can fall.  
-	
 ![Hazard Levels](PNG/blank_hazard_level.png)
 
 2. Beijing's Own Average Level Falls High on the Scale.
@@ -68,9 +66,9 @@ Now we will briefly discuss what our dataset contains.
 With targeting particulate matter floating in the air, we explored how to better predict the target variable to make a 
 better model for our stakeholders.
 
-## Understanding the profile of a person that is more likely to not have health insurance.
+## Removing trends .
 
-For the purpose of this study, we have decided not to include any obersvations of people under the age of 18. While their data is varied and numerous, they cannot apply for programs that bestow health insurance or be employed at occupations that provide it. Their status depends entirely on their guardians -- whether that is a person or the state.
+The data was capped at the last day of December 2016. While the data extended into 2017, it only covered the first two momnths and the predictions would have been affected if we allowed an entire year to be represented by the two coldest months of winter. For the purpose of this study, we have decided to work with the daily mean value of PM 2.5 vs the hourly reading. This was done to make a more strenuous deadline. While the data is numerous, the hardware cannot handle the large amount of observation (almost 500 thousand) and features. 
 
 There were several subsets of the population that we wanted to look at. 
 The first being Military Status.
@@ -88,7 +86,7 @@ The third being type of personal relationship.
 
 ### Modeling
 
-We chose to use Precision as our target metric. This came from the thinking that a false positive would be the worst case scenario for our model. Predicting that someone had insurance when they did not meant losing out on a large part of our audience. A false negative would mean our model is not a efficient but that was not as bad an option. Precision was the formula that was sensitive to that. 
+We chose to use RMSE as our target metric. This came from the thinking that a false positive would be the worst case scenario for our model. Predicting that someone had insurance when they did not meant losing out on a large part of our audience. A false negative would mean our model is not a efficient but that was not as bad an option. Precision was the formula that was sensitive to that. 
 
 We ran several models, including a dummy classifier, Logistic Regression, Random Forest Classifier, and a Light Gradient Boosting Machine. 
 
