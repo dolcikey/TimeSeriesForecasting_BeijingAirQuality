@@ -65,7 +65,8 @@ Now we will briefly discuss what our dataset contains.
 
 
 # Process
-With targeting underserved communities and total participation in mind, we explored data and strived to help our stakeholders as below. 
+With targeting particulate matter floating in the air, we explored how to better predict the target variable to make a 
+better model for our stakeholders.
 
 ## Understanding the profile of a person that is more likely to not have health insurance.
 
