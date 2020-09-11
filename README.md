@@ -2,21 +2,20 @@
 ### Mod 3 Project by Paul Torres and Dolci Sanders
 
 This repository contains data collection, cleaning and analyses of air quality data of Beijing
-from 2013-2017. We used the pollutant and weather data from twelve sites located in around Beijing's city center . 
-We downloaded and curated data from the University of California - Irvine. The data set was provided by the authors of 
-*'Cautionary Tales on Air-Quality Improvement in Beijing'* (2017), a paper published in *Proceedings of the Royal Society*.
+from 2013-2017. We used the data from twelve sites located in around Beijing's city center.
+
+We downloaded and curated data from the University of California - Irvine. The data set was provided by the authors of *'Cautionary Tales on Air-Quality Improvement in Beijing'* (2017), a paper published in *Proceedings of the Royal Society*.
 
 
 # Project
 
-For this project, we aim to analyze the sampled air out of the twelve testing sites in Beijing 
-in order to identify key trends and predict the levels of **PM 2.5** (particulate matter with a circumference of 2.5 microns). 
+For this project, we aim to analyze the sampled particulate matter from the twelve testing sites in Beijing in order to identify key trends and predict the levels of **PM 2.5** (particulate matter with a circumference of 2.5 microns). 
 This is small particulate matter that can be suspended
 in the air for long periods of time before it enters the lungs. First, we moved to combine all of the twelve sites
 into a single dataset –– visualizing each of the pollutants and weather phenomenons. 
 Then we tested for stationarity, causality between the features, and whether there was correlation between the features and time periods throughout our dataset.
 Next, we began to fit models in an effort to prepare our models to predict the last twenty percent of the data that we had set aside as a test case.   
-We next decided to focus on a univariate time series forecast vs a multivariate time series forecast. The reason for the switch was that the hardware was unable to keep up with the amount of observations and features. So in order to 
+We next decided to focus on a univariate time series forecast vs a multivariate time series forecast. The reason for the switch was that the hardware was unable to keep up with the amount of observations and features. 
 
 # Structure of Repository
 - PNG -- contains images created during EDA and those linked in README
@@ -131,14 +130,25 @@ Our models performed admirably considering the limitations of our hardware. Aggr
 
 # Further Steps
 
-If we had the time we would have liked to run further tests on datasets individually. Breaking down the data set by testing site would give us access to more accurate data. As it stands, the aggregated data yielded a pretty strong model. With a top RMSE score of 0.77 compared to the mean score of 3.955, the predicted values were not far off. 
+We would like to run further tests on datasets individually. Breaking down the data set by testing site would give us access to more accurate data. 
+
+As it stands, the aggregated data yielded a pretty strong model. Our ARIMA model had an RMSE score of 0.77 compared to the mean score of 3.955, the predicted values were not far off. 
+
+Facebook Prophet had an RMSE score of .971 and an MSE of 1.005 which wasn't far from ARIMA, but short term predictions may have been even better and more accurate. 
 
 In terms of the models used, we want to explore neural networks in more detail and the expanded use of FaceBook Prophet. 
 
 
 # Recommendations
-1. Increasing the number of publicly available testing site data to better inform residents of air quality is a viable short term goal.
-2. Using the data provided by the sites to track increases in pollutants would help environmetnalists spot and rectify pollution problems quickly.
+
+ - Increasing transparency of testing site 
+- keeping residents informed on progress showing air quality is a viable short term goal
+
+- public health campaigns to encourage less usage of transportation that relies on fossil fuels
+
+- affordable public transportation options that run on clean energy
+
+- Using the data provided by the sites to track increases in smog causing pollutants would helping environmentalists recognize increasing pollution trends and resolving problems quickly. 
 
 
 

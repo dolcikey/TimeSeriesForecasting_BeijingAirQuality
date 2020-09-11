@@ -5,6 +5,7 @@ __pycache__
 *.pytest_cache
 DATA 
 PRESENTATION
+MULTIVARIATE
 PKL
 PAUL
 
