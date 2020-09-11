@@ -149,19 +149,18 @@ We would like to run further tests on datasets individually. Breaking down the d
 
 As it stands, the aggregated data yielded a pretty strong model. Our ARIMA model had an RMSE score of 0.77 compared to the mean score of 3.955, the predicted values were not far off. 
 
-Facebook Prophet had an RMSE score of .971 and an MSE of 1.005 which wasn't far from ARIMA, but short term predictions may have been even better and more accurate. 
+Facebook Prophet had an RMSE score of 0.971 and an MSE of 1.005 which wasn't far from ARIMA, but short term predictions may have been even better and more accurate. 
 
 In terms of the models used, we want to explore neural networks in more detail and the expanded use of FaceBook Prophet. 
 
 
 # Recommendations
 
- - Increasing transparency of testing site 
-- keeping residents informed on progress showing air quality is a viable short term goal
+- Increasing transparency of testing site for public distribution & consumption
 
-- public health campaigns to encourage less usage of transportation that relies on fossil fuels
+- Keeping residents informed on progress showing air quality is a viable short term goal
 
-- affordable public transportation options that run on clean energy
+- Public health campaigns to discourage use of transportation that rely on fossil fuels and focus on green public transportation
 
 - Using the data provided by the sites to track increases in smog causing pollutants would helping environmentalists recognize increasing pollution trends and resolving problems quickly. 
 
