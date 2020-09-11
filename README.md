@@ -56,10 +56,10 @@ Now we will briefly discuss what our dataset contains.
 ![Hazard Levels](PNG/blank_hazard_level.png)
 
 2. Beijing's Own Average Level Falls High on the Scale.
-![Beijing AQI](PNG/beijing_hazard_level.png)
+![Beijing AQI](PNG/PM25_month_fill.png)
 
 3. Average PM 2.5 Levels at Each of the Twelve Stations.
-![Average PM Levels per Station](PNG/PM25_yearly_station.png)
+![Average PM Levels per Station](PNG/PM25_year_station.png)
 
 
 # Process
@@ -82,33 +82,32 @@ Secondly, the breakdown of PM 2.5 on Yearly Averages for Beijing.
 
 Finally, the visual of the rolling summary statistics.
 
-![Rolling Stats](PNG/rolling_stats.png)
+![Rolling Stats](PNG/series_monthly_PM25.png)
 
 
 ### Modeling
 
-Using a continuous variable means that we want to use RMSE as our target metric. Our goal is to minimize RMSE because it is the count of our residuals and will 
+Using a continuous variable means that we want to use RMSE as our target metric. Our goal is to minimize RMSE because it is the count of our residuals and will help us determine where our predicted values fall around the actuals. 
+ 
 
-This came from the thinking that a false positive would be the worst case scenario for our model. Predicting that someone had insurance when they did not meant losing out on a large part of our audience. A false negative would mean our model is not a efficient but that was not as bad an option. Precision was the formula that was sensitive to that. 
-
-We ran several models, including a dummy classifier, Logistic Regression, Random Forest Classifier, and a Light Gradient Boosting Machine. 
+We ran several models, including a dummy model that ran the average of the test set, Logistic Regression, Random Forest Classifier, and a Light Gradient Boosting Machine. 
 
 The outcomes were similar but the Logistic Regression performed the best in terms of Precision. 
 
 ![Model Metrics](PNG/metrics_outcomes.png)
 
 
-### Logistic Regression Performance
+### Facebook Prophet Model Performance
 
 Taking a look at the confusion matrix, we can see that it misclassified some people that had insurance as not having, which does not hurt the business case. However, it has a low amount of assuming someojne has health insurance.
 
-![Logistic Regression Confusion](PNG/NewYork_LogReg_Confusion_Matrix.png)
+![Facebook Prophet](PNG/FaceBookProphet.png)
 
-### Logistic Regression Coefficients
+### ARIMA MODEL Performance
 
 The advantage to picking a model like Logistic Regression is that it can highly interpretable. Using this model allows us access to the coefficients that the model used in order to fit the data. 
 
-![LogReg Coefficients](PNG/new_coef_albert.png)
+![ARIMA](PNG/ARIMA.png)
 
 ### Alabama Data
 
@@ -116,16 +115,12 @@ We then turned out attention to the Alabama dataset. We wanted to see how the mo
 
 ![Alabama Score](PNG/alabama_metric_score.png)
 
-Comparing the Confusion Matrix to that of NYS, we see that it had a harder time misclassifying false positives. 
-
-![Alabama Confusion](PNG/Albama_LogReg_Confusion_Matrix.png)
-
 # Conclusion
 Our model, using our desired metrics, was fit to our data very well. It ran with a high precision score and allowed for high levels of interpretation. 
 
 # Further Steps
 
-We would like to run further tests on datasets that contain the same information as the Census data but for very different populations and places with different policies than New York. 
+If we had the time we would have liked to run further tests on datasets individually. Breaking down the data set by testing site would give us access to more accurate data. As it stands, the aggregated data yielded a pretty strong model. With a top RMSE score of 0.77 compared to the mean score of 3.955, the predicted values were not far off. that contain the same information as the Census data but for very different populations and places with different policies than New York. 
 
 # Recommendations
 1. The health insurance industry would be better served by a model that took a holistic look at the target audience
