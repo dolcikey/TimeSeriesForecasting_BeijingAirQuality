@@ -105,35 +105,40 @@ The outcomes were similar but the Logistic Regression performed the best in term
 | ----------- | ----------- |
 | ARIMA       | 0.80272     |
 | SARIMAX     | 3.5193      |
-| FB Prophet  |
+| FB Prophet  | 0.97109     |
 
 
 ### Facebook Prophet Model Performance
 
-Taking a look at the confusion matrix, we can see that it misclassified some people that had insurance as not having, which does not hurt the business case. However, it has a low amount of assuming someojne has health insurance.
+**RMSE**: 0.97109
 
 ![Facebook Prophet](PNG/FaceBookProphet.png)
 
 ### ARIMA MODEL Performance
 
-The advantage to picking a model like Logistic Regression is that it can highly interpretable. Using this model allows us access to the coefficients that the model used in order to fit the data. 
+**RMSE**: 0.80272
 
 ![ARIMA](PNG/ARIMA.png)
+
+### SARIMAX Model Performance
+
+**RMSE**: 3.5193
 
 
 
 # Conclusion
-Our model, using our desired metrics, was fit to our data very well. It ran with a high precision score and allowed for high levels of interpretation. 
+Our models performed admirably considering the limitations of our hardware. Aggregating the data into a daily city-wide observation led to a lot of the data being lost. Without a concrete way to weigh each station, we were forced to consider them all equally.  
 
 # Further Steps
 
 If we had the time we would have liked to run further tests on datasets individually. Breaking down the data set by testing site would give us access to more accurate data. As it stands, the aggregated data yielded a pretty strong model. With a top RMSE score of 0.77 compared to the mean score of 3.955, the predicted values were not far off. 
 
+In terms of the models used, we want to explore neural networks in more detail and the expanded use of FaceBook Prophet. 
 
 
 # Recommendations
-1. The health insurance industry would be better served by a model that took a holistic look at the target audience
-2. Use this modeling information to target areas where demographics that fit these features are clustered
+1. Increasing the number of testing sites to better inform residents of air quality is a viable short term goal.
+2. Using the data provided by the sites to track increases in pollutants would help environmetnalists spot and rectify pollution problems
 
 
 
