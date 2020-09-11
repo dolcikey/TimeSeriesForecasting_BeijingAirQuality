@@ -63,11 +63,21 @@ Now we will briefly discuss what our dataset contains.
 With targeting particulate matter floating in the air, we explored how to better predict the target variable to make a 
 better model for our stakeholders.
 
-## Removing trends .
+## Normalizing Distributions and Removing Trends.
 
 The data was capped at the last day of December 2016. While the data extended into 2017, it only covered the first two momnths and the predictions would have been affected if we allowed an entire year to be represented by the two coldest months of winter. For the purpose of this study, we have decided to work with the daily mean value of PM 2.5 vs the hourly reading. This was done to make a more strenuous deadline. While the data is numerous, the hardware cannot handle the large amount of observation (almost 500 thousand) and features. 
 
 Doing each of the stations individually would not have been a cost effective project. So instead, we elected to aggregate the data from the twelve sites and forecast the city of Beijing as a whole. 
+
+Our first step was to examine the distribution. We found that it was not normally distributed.
+
+![Original Distribution](PNG/dist.png)
+
+So we natural log transformed it. It took on the shape of a normal distribution.
+
+![Normal Distribution](PNG/log_dist.png)
+
+### Next we looked at the breakdown
 
 First, the breakdown of PM 2.5 on Monthly Averages for Beijing.
     
@@ -113,7 +123,9 @@ Our model, using our desired metrics, was fit to our data very well. It ran with
 
 # Further Steps
 
-If we had the time we would have liked to run further tests on datasets individually. Breaking down the data set by testing site would give us access to more accurate data. As it stands, the aggregated data yielded a pretty strong model. With a top RMSE score of 0.77 compared to the mean score of 3.955, the predicted values were not far off. that contain the same information as the Census data but for very different populations and places with different policies than New York. 
+If we had the time we would have liked to run further tests on datasets individually. Breaking down the data set by testing site would give us access to more accurate data. As it stands, the aggregated data yielded a pretty strong model. With a top RMSE score of 0.77 compared to the mean score of 3.955, the predicted values were not far off. 
+
+
 
 # Recommendations
 1. The health insurance industry would be better served by a model that took a holistic look at the target audience
