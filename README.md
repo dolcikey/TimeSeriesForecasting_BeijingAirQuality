@@ -70,23 +70,26 @@ better model for our stakeholders.
 
 The data was capped at the last day of December 2016. While the data extended into 2017, it only covered the first two momnths and the predictions would have been affected if we allowed an entire year to be represented by the two coldest months of winter. For the purpose of this study, we have decided to work with the daily mean value of PM 2.5 vs the hourly reading. This was done to make a more strenuous deadline. While the data is numerous, the hardware cannot handle the large amount of observation (almost 500 thousand) and features. 
 
-There were several subsets of the population that we wanted to look at. 
-The first being Military Status.
+Doing each of the stations individually would not have been a cost effective project. So instead, we elected to aggregate the data from the twelve sites and forecast the city of Beijing as a whole. 
+
+First, the breakdown of PM 2.5 on Monthly Averages for Beijing.
     
-![Military Status](PNG/nys_mil_hi.png)
+![Monthly Average](PNG/PM2.5_monthly_beijing.png)
 
-The second being level of English fluency the person is.
+Secondly, the breakdown of PM 2.5 on Yearly Averages for Beijing.
 
-![English Speakers](PNG/nys_eng_hi.png)
+![English Speakers](PNG/PM2.5_yearly_beijing.png)
 
-The third being type of personal relationship.
+Finally, the visual of the rolling summary statistics.
 
-![Marriage vs Single](PNG/NYS_Marriage_Distribution.png)
+![Rolling Stats](PNG/rolling_stats.png)
 
 
 ### Modeling
 
-We chose to use RMSE as our target metric. This came from the thinking that a false positive would be the worst case scenario for our model. Predicting that someone had insurance when they did not meant losing out on a large part of our audience. A false negative would mean our model is not a efficient but that was not as bad an option. Precision was the formula that was sensitive to that. 
+Using a continuous variable means that we want to use RMSE as our target metric. Our goal is to minimize RMSE because it is the count of our residuals and will 
+
+This came from the thinking that a false positive would be the worst case scenario for our model. Predicting that someone had insurance when they did not meant losing out on a large part of our audience. A false negative would mean our model is not a efficient but that was not as bad an option. Precision was the formula that was sensitive to that. 
 
 We ran several models, including a dummy classifier, Logistic Regression, Random Forest Classifier, and a Light Gradient Boosting Machine. 
 
