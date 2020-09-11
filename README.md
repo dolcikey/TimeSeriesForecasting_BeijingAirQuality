@@ -43,7 +43,7 @@ We next decided to focus on a univariate time series forecast vs a multivariate 
 
 # Data
 Before we dive deeper into the questions, here is some information on our data. 
-1. The data is focused on 12 testing sites in and around Beijing's city center from 2013-New York State and Alabama in 2018.
+1. The data is focused on 12 testing sites in and around Beijing's city center from 2013-2017.
 2. The data here was downloaded from *The University of California - Irvine* Machine Learning Repository.
     - You can find the dataset and dictionary [here](https://archive.ics.uci.edu/ml/datasets/Beijing+Multi-Site+Air-Quality+Data).  
 
