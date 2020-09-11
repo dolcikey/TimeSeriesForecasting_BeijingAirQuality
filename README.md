@@ -141,6 +141,8 @@ The outcomes were similar but the Logistic Regression performed the best in term
 
 Our models performed admirably considering the limitations of our hardware. Aggregating the data into a daily city-wide observation led to a lot of the data being lost. Without a concrete way to weigh each station, we were forced to consider them all equally.  
 
+In our ARIMA specification, the middle number in both the first and the second bracket is zero. That means, there is no simple differencing and no seasonal differencing. Thus our series appears to be mean-stationary (rather than integrated or seasonally integrated). (The AR and MA parameters yielded by the auto.arima function are restricted to be in the region of stationarity; meanwhile, nonstationarity can be introduced by simple or seasonal differencing.) Given a mean-stationary process, you should actually expect the point forecasts to converge to the mean of the process. That is one of the intrinsic features of a mean-stationary time series. And that is also why these kind of processes are called "mean-reverting".
+
 # Further Steps
 
 We would like to run further tests on datasets individually. Breaking down the data set by testing site would give us access to more accurate data. 
