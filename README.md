@@ -20,9 +20,9 @@ We next decided to focus on a univariate time series forecast vs a multivariate 
 
 # Structure of Repository
 - PNG -- contains images created during EDA and those linked in README
-- Data_Cleaning.ipynb -- contains all processes that went into pipeline cleaning and statistical tests
-- Model_Evaluation.ipynb -- contains code that ran all of the models for NYS data
-- Alabama_Test.ipynb -- contains case where NYS model predicts onto Alabama data
+- 001_Data_Cleaning.ipynb -- contains all processes that went into cleaning the time series
+- 002_EDA.ipynb -- contains code that creates the visuals for the project
+- 003_Modeling.ipynb -- contains case where we tested forecasting models against holdout data
 - README.md
 
 
@@ -36,9 +36,6 @@ We next decided to focus on a univariate time series forecast vs a multivariate 
 		Do they have to worry about loved ones contracting the same illness if not already predisposed?
 2. Understanding how different countries and regions may battle against the proliferation of particulate matter
 	- Are some regions experiencing a rise in PM 2.5 while others are experiencing a decrese? 
-	-  
-	-  
-	
 3. Understanding the viability in different models
 	- Is it better to use a neural network or the basic ARIMA? 
 	- Does the best model do a good job of predicting the target levels? 
@@ -90,7 +87,7 @@ Finally, the visual of the rolling summary statistics.
 Using a continuous variable means that we want to use RMSE as our target metric. Our goal is to minimize RMSE because it is the count of our residuals and will help us determine where our predicted values fall around the actuals. 
  
 
-We ran several models, including a dummy model that ran the average of the test set, Logistic Regression, Random Forest Classifier, and a Light Gradient Boosting Machine. 
+We ran several models, including a dummy model that ran the average of the test set, the ARIMA Model, and the SARIMAX Model. 
 
 The outcomes were similar but the Logistic Regression performed the best in terms of Precision. 
 
@@ -109,11 +106,7 @@ The advantage to picking a model like Logistic Regression is that it can highly 
 
 ![ARIMA](PNG/ARIMA.png)
 
-### Alabama Data
 
-We then turned out attention to the Alabama dataset. We wanted to see how the model would fit the policies from a state that viewed expanded Medicare so differently. 
-
-![Alabama Score](PNG/alabama_metric_score.png)
 
 # Conclusion
 Our model, using our desired metrics, was fit to our data very well. It ran with a high precision score and allowed for high levels of interpretation. 
