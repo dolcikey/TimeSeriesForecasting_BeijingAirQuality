@@ -19,7 +19,8 @@ We tested for stationarity and whether there was correlation between the feature
 
 Next, we began to fit models in an effort to prepare our models to predict the last twenty percent of the data that we had set aside as a test case.   
 
-Due to the time constraints and large amount of data, we decided to focus on a univariate time series forecast vs a multivariate time series forecast. --One reason for the switch was that our hardware was unable to keep up with the amount of observations and features in an hourly prediction with multiple feature. 
+Due to the time constraints and large amount of data, we decided to focus on a univariate time series forecast vs a multivariate time series forecast. 
+One reason for the switch was that our hardware was unable to keep up with the amount of observations and features in an hourly prediction with multiple feature. 
 
 # Structure of Repository
 - PNG -- contains images created during EDA and those linked in README
@@ -109,8 +110,7 @@ Using a continuous variable means that we want to use RMSE as our target metric.
  
 
 We ran several models, including a dummy model that ran the average of the test set, the ARIMA Model, and the SARIMAX Model. 
-
-The outcomes were similar but the Logistic Regression performed the best in terms of Precision. 
+ 
 
 | Model       | RMSE        |
 | ----------- | ----------- |
