@@ -124,7 +124,7 @@ The outcomes were similar but the Logistic Regression performed the best in term
 
 **RMSE**: 3.5193
 
-
+![SARIMAX](PNG/SARIMAX.png)
 
 # Conclusion
 Our models performed admirably considering the limitations of our hardware. Aggregating the data into a daily city-wide observation led to a lot of the data being lost. Without a concrete way to weigh each station, we were forced to consider them all equally.  
@@ -138,7 +138,7 @@ In terms of the models used, we want to explore neural networks in more detail a
 
 # Recommendations
 1. Increasing the number of testing sites to better inform residents of air quality is a viable short term goal.
-2. Using the data provided by the sites to track increases in pollutants would help environmetnalists spot and rectify pollution problems
+2. Using the data provided by the sites to track increases in pollutants would help environmetnalists spot and rectify pollution problems quickly.
 
 
 
