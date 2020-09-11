@@ -1,5 +1,5 @@
-# Beijing Air Quality Time Series Model
-### Mod 3 Project by Paul Torres and Dolci Sanders
+# Beijing Air Quality Analysis and Time Series Modeling
+### by Paul Torres and Dolci Sanders
 
 This repository contains data collection, cleaning and analyses of air quality data of Beijing
 from 2013-2017. We used the data from twelve sites located in around Beijing's city center.
@@ -10,44 +10,56 @@ We downloaded and curated data from the University of California - Irvine. The d
 # Project
 
 For this project, we aim to analyze the sampled particulate matter from the twelve testing sites in Beijing in order to identify key trends and predict the levels of **PM 2.5** (particulate matter with a circumference of 2.5 microns). 
-This is small particulate matter that can be suspended
-in the air for long periods of time before it enters the lungs. First, we moved to combine all of the twelve sites
-into a single dataset –– visualizing each of the pollutants and weather phenomenons. 
-Then we tested for stationarity, causality between the features, and whether there was correlation between the features and time periods throughout our dataset.
+
+This is small particulate matter that can be suspended in the air for long periods of time before it enters the lungs. 
+
+First, we moved to combine all of the twelve sites into a single dataset interpolating the data. 
+
+We tested for stationarity and whether there was correlation between the features and time periods throughout our dataset.
+
 Next, we began to fit models in an effort to prepare our models to predict the last twenty percent of the data that we had set aside as a test case.   
-We next decided to focus on a univariate time series forecast vs a multivariate time series forecast. The reason for the switch was that the hardware was unable to keep up with the amount of observations and features. 
+
+Due to the time constraints and large amount of data, we decided to focus on a univariate time series forecast vs a multivariate time series forecast. --One reason for the switch was that our hardware was unable to keep up with the amount of observations and features in an hourly prediction with multiple feature. 
 
 # Structure of Repository
 - PNG -- contains images created during EDA and those linked in README
 - 001_Data_Cleaning.ipynb -- contains all processes that went into cleaning the time series
-- 002_EDA.ipynb -- contains code that creates the visuals for the project
-- 003_Modeling.ipynb -- contains case where we tested forecasting models against holdout data
-- README.md
+- 002_EDA.ipynb -- creates the visuals and shows analysis of those visuals for the project
+- 003_Modeling.ipynb -- contains forecasting models against holdout data
+- README.md 
 
 
 # Business Case
+
 1. Marking a Target/Identifying Stakeholders
 	- To whom does it matter if we can predict the amount of particulate matter in the air?
-		1. **Residents of an Area**:  
+		1. **Residents of an Area and Tourists**:  
 		Will they be able to enjoy time outdoors?
 		2. **People Who Suffer From Respiratory Illnesses**:  
 		Will their conditions worsen?
 		Do they have to worry about loved ones contracting the same illness if not already predisposed?
+		Will this contribute to premature death?
+
 2. Understanding how different countries and regions may battle against the proliferation of particulate matter
-	- Are some regions experiencing a rise in PM 2.5 while others are experiencing a decrese? 
+	- Are some regions experiencing a rise in PM 2.5 while others are experiencing a decrese?
+
 3. Understanding the viability in different models
-	- Is it better to use a neural network or the basic ARIMA? 
+	- Is it better to use a Facebook Prophet or a basic ARIMA? 
+	- Will SARIMAX models work with this data set? 
 	- Does the best model do a good job of predicting the target levels? 
 
 
 # Data
+
 Before we dive deeper into the questions, here is some information on our data. 
+
 1. The data is focused on 12 testing sites in and around Beijing's city center from 2013-2017.
 2. The data here was downloaded from *The University of California - Irvine* Machine Learning Repository.
     - You can find the dataset and dictionary [here](https://archive.ics.uci.edu/ml/datasets/Beijing+Multi-Site+Air-Quality+Data).  
 
 ## Descriptive Statistics
 Now we will briefly discuss what our dataset contains. 
+
 1. PM 2.5: The target variable has ranges within which it can fall.  
 ![Hazard Levels](PNG/blank_hazard_level.png)
 
@@ -126,6 +138,7 @@ The outcomes were similar but the Logistic Regression performed the best in term
 ![SARIMAX](PNG/SARIMAX.png)
 
 # Conclusion
+
 Our models performed admirably considering the limitations of our hardware. Aggregating the data into a daily city-wide observation led to a lot of the data being lost. Without a concrete way to weigh each station, we were forced to consider them all equally.  
 
 # Further Steps
