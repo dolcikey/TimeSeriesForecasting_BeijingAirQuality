@@ -101,7 +101,11 @@ We ran several models, including a dummy model that ran the average of the test 
 
 The outcomes were similar but the Logistic Regression performed the best in terms of Precision. 
 
-![Model Metrics](PNG/metrics_outcomes.png)
+| Model       | RMSE        |
+| ----------- | ----------- |
+| ARIMA       | 0.80272     |
+| SARIMAX     | 3.5193      |
+| FB Prophet  |
 
 
 ### Facebook Prophet Model Performance
