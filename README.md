@@ -137,7 +137,7 @@ In terms of the models used, we want to explore neural networks in more detail a
 
 
 # Recommendations
-1. Increasing the number of testing sites to better inform residents of air quality is a viable short term goal.
+1. Increasing the number of publicly available testing site data to better inform residents of air quality is a viable short term goal.
 2. Using the data provided by the sites to track increases in pollutants would help environmetnalists spot and rectify pollution problems quickly.
 
 
